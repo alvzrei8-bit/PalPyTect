@@ -9,7 +9,6 @@ class Generator:
 
     def generate_stub(self):
         entropy = int(time.perf_counter() * 1000) & 0xFFFFFFFF
-
         payload = zlib.compress(self.src.encode())
 
         return f'''
@@ -53,7 +52,7 @@ def _vmp():
             _s = (_s ^ _ns.get(_BUMP, 0) ^ (time.perf_counter_ns() - _t)) & 0xFFFFFFFF
             _hist.append(_ptr)
 
-        except:
+        except Exception:
             break
 
     if callable(_payload):
@@ -68,9 +67,19 @@ if __name__ == "__main__":
 
     def _gen_map(self, key):
         blocks = {
-            "ENTRY": f"self[{self._kid('NEXT')}]={self._kid('CORE')};self[{self._kid('BUMP')}]=1",
-            "CORE": f"PAYLOAD=lambda:exec(zlib.decompress({zlib.compress(self.src.encode())!r}));self[{self._kid('NEXT')}]={self._kid('EXIT')};self[{self._kid('BUMP')}]=3",
-            "EXIT":  f"self[{self._kid('NEXT')}]=None;self[{self._kid('BUMP')}]=0",
+            "ENTRY": (
+                f"self[{self._kid('NEXT')}]={self._kid('CORE')};"
+                f"self[{self._kid('BUMP')}]=1"
+            ),
+            "CORE": (
+                f\"PAYLOAD=lambda:exec(zlib.decompress({zlib.compress(self.src.encode())!r}));"
+                f"self[{self._kid('NEXT')}]={self._kid('EXIT')};"
+                f"self[{self._kid('BUMP')}]=3\"
+            ),
+            "EXIT": (
+                f"self[{self._kid('NEXT')}]=None;"
+                f"self[{self._kid('BUMP')}]=0"
+            ),
         }
 
         m = {}
