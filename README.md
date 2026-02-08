@@ -33,7 +33,7 @@ Hides control flow
 
 Decode logic at runtime, not in memory
 
-VM inside VM inside VM inside VM inside VM
+VM inside VM ( i think maybe idk i forgot)
 
 Fast runtime
 
