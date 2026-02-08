@@ -5,6 +5,7 @@ Obfuscator that protects your hardworked and hard-earned code from skids
 # Only in TERMUX! ( i think )
 
 Features:
+
 Traps (that are not visible to the code)
 
 Integrity Check ( That are not visible to 
