@@ -6,36 +6,9 @@ Obfuscator that protects your hardworked and hard-earned code from skids
 
 Features:
 
-Traps (that are not visible to the code)
+Malware detector ( script will decline if user tries to obf malware)
 
-Integrity Check ( That are not visible to 
-the code)
-
-Unknown Language 
-
-Long string variables to confuse rev engineers
-
-Debugging Detector (script crashes if a debugger is detected)
-
-Mix real logic with dead logic
-
-Code changes everytime
-
-Custom VM with randomized op codes
-
-Split logic to state machines
-
-No real logic left out in the open
-
-Different executions take different valid paths
-
-Hides control flow
-
-Decode logic at runtime, not in memory
-
-VM inside VM ( i think maybe idk i forgot)
-
-Fast runtime
+other stuff
 
 ```bash
 git clone https://github.com/alvzrei8-bit/PalPyTect/
