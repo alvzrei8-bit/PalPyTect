@@ -38,5 +38,5 @@ Fast runtime
 
 ```bash
 git clone https://github.com/alvzrei8-bit/PalPyTect
-cd PyTect
+cd PalPyTect
 pip install -r install.txt
