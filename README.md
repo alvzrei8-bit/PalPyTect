@@ -40,8 +40,10 @@ Fast runtime
 ```bash
 git clone https://github.com/alvzrei8-bit/PalPyTect/
 cd PalPyTect
+```
 
 # USAGE
 
 ```bash
 python3 main.py <target_file>
+```
