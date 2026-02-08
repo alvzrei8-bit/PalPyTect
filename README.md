@@ -37,6 +37,6 @@ VM inside VM inside VM inside VM inside VM
 Fast runtime
 
 ```bash
-git clone https://github.com/alvzrei8-bit/PalPyTect
+git clone https://github.com/alvzrei8-bit/PalPyTect/
 cd PalPyTect
-pip install -r install.txt
+
